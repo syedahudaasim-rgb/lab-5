@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int service;
+    float salary, bonus;
+
+    printf("Enter salary: ");
+    scanf("%f", &salary);
+
+    printf("Enter years of service: ");
+    scanf("%d", &service);
+
+    bonus = (service > 10) ? salary * 0.30 :
+            (service > 5)  ? salary * 0.20 :
+                             salary * 0.10;
+
+    printf("Bonus Amount: Rs. %.2f\n", bonus);
+    return 0;
+}
