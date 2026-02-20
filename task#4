@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int category, item, qty;
+    int price = 0;
+
+    printf("Menu:\n1. Fast Food\n2. Desi Food\n");
+    scanf("%d", &category);
+
+    switch (category) {
+        case 1:
+            printf("1. Burger\n2. Pizza\n");
+            scanf("%d", &item);
+            switch (item) {
+                case 1: price = 500; break;
+                case 2: price = 1200; break;
+                default: printf("Invalid item\n"); return 0;
+            }
+            break;
+
+        case 2:
+            printf("1. Biryani\n2. Karahi\n");
+            scanf("%d", &item);
+            switch (item) {
+                case 1: price = 350; break;
+                case 2: price = 1500; break;
+                default: printf("Invalid item\n"); return 0;
+            }
+            break;
+
+        default:
+            printf("Invalid category\n");
+            return 0;
+    }
+
+    printf("Enter quantity: ");
+    scanf("%d", &qty);
+
+    printf("Total Bill: Rs. %d\n", price * qty);
+    return 0;
+}
