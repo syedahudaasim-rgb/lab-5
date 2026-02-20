@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    int vehicle, option, hours;
+    int rate = 0;
+
+    printf("Vehicle Type:\n1. Car\n2. Bike\n3. Bus\n");
+    scanf("%d", &vehicle);
+
+    printf("Enter hours parked: ");
+    scanf("%d", &hours);
+
+    switch (vehicle) {
+        case 1:
+            printf("1. Regular\n2. VIP\n");
+            scanf("%d", &option);
+            switch (option) {
+                case 1: rate = 50; break;
+                case 2: rate = 100; break;
+                default: printf("Invalid option\n"); return 0;
+            }
+            break;
+
+        case 2:
+            printf("1. Regular\n2. Premium\n");
+            scanf("%d", &option);
+            switch (option) {
+                case 1: rate = 20; break;
+                case 2: rate = 40; break;
+                default: printf("Invalid option\n"); return 0;
+            }
+            break;
+
+        case 3:
+            rate = 200;
+            break;
+
+        default:
+            printf("Invalid vehicle type\n");
+            return 0;
+    }
+
+    printf("Total Parking Fee: Rs. %d\n", rate * hours);
+    return 0;
+}
