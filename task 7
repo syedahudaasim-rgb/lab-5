@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char username[20];
+    int password, otp;
+
+    printf("Enter username: ");
+    scanf("%s", username);
+
+    if (strcmp(username, "admin") == 0) {
+        printf("Enter password: ");
+        scanf("%d", &password);
+
+        if (password == 1234) {
+            printf("Enter OTP: ");
+            scanf("%d", &otp);
+
+            if (otp == 9999) {
+                printf("Login Successful\n");
+            } else {
+                printf("Invalid OTP\n");
+            }
+        } else {
+            printf("Incorrect Password\n");
+        }
+    } else {
+        printf("Invalid Username\n");
+    }
+
+    return 0;
+}
